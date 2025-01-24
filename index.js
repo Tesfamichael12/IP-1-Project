@@ -393,3 +393,160 @@ for (let i = 0; i < 100; i++) {
     })
   )
 }
+function rectangularCollision({ rectangle1, rectangle2 }) {
+  if (!rectangle1 || !rectangle2) return false // Prevents errors
+  return (
+    rectangle1.position.y + rectangle1.height >= rectangle2.position.y &&
+    rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
+    rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
+    rectangle1.position.y <= rectangle2.position.y + rectangle2.height
+  )
+}
+
+function checkPlayerInvaderCollision() {
+  // Check for collision between player and invaders
+  grids.forEach((grid) => {
+    grid.invaders.forEach((invader) => {
+      if (game.isOver) return
+
+      if (invader.position && invader.width && invader.height) {
+        if (
+          rectangularCollision({
+            rectangle1: player,
+            rectangle2: invader
+          })
+        ) {
+          setTimeout(() => {
+            player.opacity = 0
+            game.isOver = true
+            endGame()
+
+            // create explosion
+            createExplosion({
+              position: {
+                x: player.position.x + player.width / 2,
+                y: player.position.y + player.height / 2
+              },
+              color: 'white',
+              particleCount: 15
+            })
+          }, 0)
+          setTimeout(() => {
+            game.active = false
+          }, 2000)
+        }
+      }
+    })
+  })
+}
+
+function createExplosion({ position, color, particleCount }) {
+  audio.explode.play()
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(
+      new Particle({
+        position: {
+          x: position.x,
+          y: position.y
+        },
+        velocity: {
+          x: (Math.random() - 0.5) * 1,
+          y: (Math.random() - 0.5) * 1
+        },
+        radius: Math.random() * 3,
+        color: color,
+        fades: true
+      })
+    )
+  }
+}
+
+function endGame() {
+  console.log('you lose')
+  audio.gameOver.play()
+
+  // Makes player disappear
+  setTimeout(() => {
+    player.opacity = 0
+    game.over = true
+  }, 0)
+
+  // stops game altogether
+  setTimeout(() => {
+    game.active = false
+    document.querySelector('#restartScreen').style.display = 'flex'
+    document.querySelector('#finalScore').innerHTML = score
+  }, 2000)
+
+  createExplosion({
+    position: {
+      x: player.position.x + player.width / 2,
+      y: player.position.y + player.height / 2
+    },
+    color: 'white',
+    particleCount: 15
+  })
+}
+
+function animation() {
+  if (!game.active) return
+
+  requestAnimationFrame(animation)
+  c.fillStyle = 'black'
+  c.fillRect(0, 0, canvas.width, canvas.height)
+  player.move()
+
+  particles.forEach((particle, particleIndex) => {
+    if (particle.position.y - particle.radius > canvas.height) {
+      particle.position.x = Math.random() * canvas.width
+      particle.position.y = -particle.radius
+    }
+
+    if (particle.opacity <= 0) {
+      setTimeout(() => {
+        particles.splice(particleIndex, 1)
+      }, 0)
+    } else {
+      particle.update()
+    }
+  })
+
+  particles.forEach((particle) => {
+    particle.update()
+  })
+
+  invaderProjectiles.forEach((invaderProjectile, index) => {
+    if (invaderProjectile.position.y > canvas.height) {
+      invaderProjectiles.splice(index, 1)
+    } else invaderProjectile.update()
+
+    // remove player if invaders touch it
+    checkPlayerInvaderCollision()
+    if (
+      rectangularCollision({
+        rectangle1: invaderProjectile,
+        rectangle2: player
+      })
+    ) {
+      setTimeout(() => {
+        invaderProjectiles.splice(index, 1)
+        player.opacity = 0
+        game.isOver = true
+        endGame()
+
+        // create explosion
+        createExplosion({
+          position: {
+            x: player.position.x + player.width / 2,
+            y: player.position.y + player.height / 2
+          },
+          color: 'white',
+          particleCount: 15
+        })
+      }, 0)
+      setTimeout(() => {
+        game.active = false
+      }, 2000)
+    }
+  })
