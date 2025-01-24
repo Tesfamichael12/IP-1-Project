@@ -1,0 +1,804 @@
+/* Reset default margin, padding, and set box-sizing to border-box for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set default font for the body */
+body {
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header-info a {
+  background-color: #ffd9d0;
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+}
+
+/* Navigation container styles */
+.nav-container {
+  background-color: #f4f1ea;
+  padding: 0 32px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+/* Navigation bar styles */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo styles */
+.logo {
+  max-width: 140px;
+}
+.logo img {
+  width: 100%;
+  margin-right: 15px;
+}
+
+/* Navigation links styles */
+.nav-links {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Individual navigation link styles */
+.nav-link {
+  color: #382110;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  height: 50px;
+  padding: 0 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Navigation link hover effect */
+.nav-link:hover {
+  background-color: #382110;
+  color: white;
+}
+
+/* Dropdown menu styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown toggle arrow */
+.dropdown-toggle::after {
+  content: "▼";
+  font-size: 0.6rem;
+  margin-left: 0.3rem;
+}
+
+/* Search container styles */
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 1fr;
+  max-width: 400px;
+}
+
+/* Search input styles */
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 35px;
+}
+
+/* Hide search icon by default */
+.search-icon {
+  display: none;
+}
+
+/* Authentication links styles */
+.auth-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Individual authentication link styles */
+.auth-link {
+  color: #382110;
+  font-size: 16px;
+}
+
+/* Responsive styles for screens with max-width of 1190px */
+@media (max-width: 1190px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-info a {
+    overflow: hidden;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    border-top: 1px solid #d8d8d8;
+  }
+
+  .search-container {
+    margin: 0 15px;
+  }
+}
+
+/* Responsive styles for screens with max-width of 768px */
+@media (max-width: 768px) {
+  .search-container,
+  .auth-links .join,
+  .my-books-link {
+    display: none;
+  }
+  .nav-links {
+    gap: 10vw;
+  }
+  .nav {
+    padding-top: 10px;
+  }
+
+  .auth-links .sign-in {
+    height: 32px;
+    padding: 0 15px;
+    border-radius: 5px;
+    background-color: #382110;
+    color: white;
+  }
+  .nav {
+    justify-content: space-between;
+  }
+  .search-icon {
+    display: block;
+  }
+}
+
+/* Responsive styles for screens with max-width of 300px */
+@media (max-width: 300px) {
+  .nav-links {
+    gap: 0;
+  }
+}
+/* header styles end */
+
+/* Footer section styles */
+.footer {
+  background-color: #f9f9f9;
+  padding: 2rem 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Footer content grid layout */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* Footer section heading styles */
+.footer-section h3 {
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* Footer section list styles */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Footer section list item styles */
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer section list item link styles */
+.footer-section ul li a {
+  color: #382110;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+/* Footer section list item link hover effect */
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Social icons container styles */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Individual social icon styles */
+.social-icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
+
+/* App download buttons container styles */
+.app-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* App download button image styles */
+.app-button img {
+  height: 40px;
+  width: auto;
+}
+
+/* Footer bottom section styles */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Desktop version link styles */
+.desktop-version {
+  color: #382110;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+/* Desktop version link hover effect */
+.desktop-version:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles for screens with max-width of 940px */
+@media (max-width: 940px) {
+  .app-downloads {
+    flex-direction: row;
+  }
+}
+
+/* Responsive styles for screens with max-width of 768px */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .app-downloads {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
+
+/* Responsive styles for screens with max-width of 480px */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .app-downloads {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Footer section styles end */
+
+/* Hero seciton styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-logo {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+.hero-section {
+  margin-top: 110px;
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+}
+.second-image {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero img {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .first-image {
+    display: none;
+  }
+  .second-image {
+    display: block;
+  }
+}
+
+@media (max-width: 1190px) {
+  .hero-section {
+    margin-top: 165px;
+  }
+}
+
+.sign-up-with-page--overlay {
+  width: 300px;
+  height: 370px;
+  padding: 24px;
+  font-family: Merriweather, Georgia, serif;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  position: absolute;
+  top: 1px;
+  right: 220px;
+  bottom: 0;
+  z-index: 10; /* Ensure it overlays above other content */
+}
+.sign-up-with-page--overlay .signin {
+  margin-top: 24px !important;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-top: 1px solid #ccc;
+}
+.sign-up-with-page--overlay .terms {
+  font-size: 11px !important;
+}
+.sign-up-with-page--overlay h3 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  padding-top: 4px;
+  margin-bottom: 14px;
+}
+.sign-up-with-page--overlay .email-btn {
+  background-color: #382110 !important;
+  color: white !important;
+}
+
+@media screen and (max-width: 1230px) {
+  .sign-up-with-page--overlay {
+    display: none;
+  }
+}
+/* Hero seciton styles end */
+
+/* main section styles */
+.main-container {
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 5px;
+}
+.promo-section {
+  margin: 0 auto;
+  margin-top: 48px;
+  text-align: center;
+  color: #382110;
+  max-width: 424px;
+}
+
+.promo-section .heading {
+  font-family: Merriweather, Georgia, serif;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* styles for the sign up components */
+.sign-up-with-container {
+  width: 100%;
+  max-width: 424px;
+  text-align: center;
+}
+
+.sign-up-with-container .logo {
+  height: 40px;
+  width: 181px;
+  margin: 44px auto 48px;
+}
+
+.sign-up-with-container .button {
+  width: 100%;
+  padding: 12px;
+  margin: 16px 0;
+  border: 1px solid #d6d0c4;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.sign-up-with-container .amazon-btn {
+  background-color: #f5d47a;
+  color: #000000;
+  border-color: #d6aa59;
+  transition: all 0.15s ease-in-out;
+}
+
+.sign-up-with-container .amazon-btn:hover {
+  background-color: #f0b954;
+}
+.sign-up-with-container .amazon-btn:hover span.text-content {
+  opacity: 0.8;
+}
+
+.sign-up-with-container .apple-btn {
+  background-color: #ffffff;
+  padding-right: 25px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #000000;
+  border-color: #d6d0c4;
+  transition: all 0.15s ease-in-out;
+}
+
+.sign-up-with-container .apple-btn:hover span.text-content {
+  opacity: 0.8;
+}
+
+.sign-up-with-container .email-btn {
+  background-color: #f4f1ea;
+  color: #333333;
+  transition: all 0.15s ease-in-out;
+}
+
+.sign-up-with-container .email-btn:hover {
+  background-color: #ebe8e2;
+  opacity: 0.9;
+}
+
+.sign-up-with-container .terms {
+  margin-top: 30px;
+  font-size: 15px;
+  color: #000;
+}
+
+.sign-up-with-container .terms a {
+  color: #00635d;
+  text-decoration: none;
+}
+
+.sign-up-with-container .signin {
+  margin-top: 10px;
+  font-size: 15px;
+}
+.sign-up-with-container .signin a {
+  color: #00635d;
+  text-decoration: none;
+}
+
+.sign-up-with-container a:hover {
+  text-decoration: underline;
+}
+
+.sign-up-with-container .button img {
+  width: 30px;
+}
+
+.sign-up-with-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* books display grid styles */
+.books-gird-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.author-search-container {
+  margin-bottom: 40px;
+}
+
+.authors-search-input {
+  max-width: 400px;
+}
+/* Alrady have been writen above */
+/* .search-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 35px;
+} */
+
+.search-input:focus {
+  outline: none;
+  border-color: #027a9f;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.book-section {
+  margin-bottom: 40px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.book-cover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .section-title {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .search-input {
+    font-size: 13px;
+  }
+}
+
+/* links and quotes section */
+.list-section,
+.genres-section,
+.quotes-section,
+.awards-section {
+  padding: 0 10px;
+}
+
+.section-title.with-count {
+  margin-bottom: 15px;
+}
+
+.section-link {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.main-container a {
+  color: #00635d;
+}
+
+.book-count {
+  color: #666;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.chevron {
+  color: #666;
+  font-size: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+.chevron:hover,
+.section-link:hover .chevron {
+  transform: translateX(5px);
+}
+
+.lists-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.lists-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-link {
+  color: #00635d;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.list-link:hover {
+  text-decoration: underline;
+}
+
+.quote-card {
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.quote-content {
+  display: flex;
+  gap: 20px;
+}
+
+.quote-author-image {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.quote-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.quote-text p {
+  margin: 0;
+}
+
+.quote-author {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+.awards-banner {
+  display: block;
+  margin-top: 15px;
+}
+
+.awards-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.awards-link {
+  display: block;
+  color: #00635d;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px 0;
+  margin-bottom: 30px;
+}
+
+.awards-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .quote-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .lists-grid {
+    gap: 15px;
+  }
+
+  .quote-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lists-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 13px;
+  }
+
+  .quote-text {
+    font-size: 13px;
+  }
+}
