@@ -1,11 +1,21 @@
-import audio from './audio.js'
-import spaceshipImage from './images/spaceship.png'
-import invaderImage from './images/invader.png'
-
 let score = 0
 const scoreEl = document.querySelector('#scoreEl')
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
+
+// Define audio object with necessary audio files
+const audio = {
+  enemyShoot: new Howl({ src: ['audio/enemyShoot.mp3'] }),
+  explode: new Howl({ src: ['audio/explode.mp3'] }),
+  gameOver: new Howl({ src: ['audio/gameOver.mp3'] }),
+  backgroundMusic: new Howl({
+    src: ['audio/backgroundMusic.mp3'],
+    loop: true
+  }),
+  start: new Howl({ src: ['audio/start.mp3'] }),
+  select: new Howl({ src: ['audio/select.mp3'] }),
+  shoot: new Howl({ src: ['audio/shoot.mp3'] })
+}
 
 canvas.width = 1024
 canvas.height = 576
@@ -17,17 +27,13 @@ class Player {
       x: 0,
       y: 0
     }
-    this.position = {
-      x: canvas.width / 2,
-      y: canvas.height - 50
-    }
     this.speed = 5
 
     this.rotate = 0
     this.opacity = 1
 
     const image = new Image()
-    image.src = spaceshipImage
+    image.src = './images/spaceship.png'
     image.onload = () => {
       const scale = 0.12
       this.image = image
@@ -137,7 +143,7 @@ class Particle {
 
 class InvaderProjectile {
   constructor({ position, velocity }) {
-    this.position = position || { x: 0, y: 0 }
+    this.position = position
     this.velocity = velocity
 
     this.width = 3
@@ -164,16 +170,16 @@ class Invader {
     }
 
     const image = new Image()
-    image.src = invaderImage
-    this.position = {
-      x: position.x,
-      y: position.y
-    }
+    image.src = './images/invader.png'
     image.onload = () => {
       const scale = 1
       this.image = image
       this.width = image.width * scale
       this.height = image.height * scale
+      this.position = {
+        x: position.x,
+        y: position.y
+      }
     }
   }
 
@@ -196,11 +202,9 @@ class Invader {
       this.position.y += velocity.y
     }
   }
+
   shoot(invaderProjectiles) {
-    // Ensure audio object is defined or remove this line if not necessary
-    if (typeof audio !== 'undefined' && audio.enemyShoot) {
-      audio.enemyShoot.play()
-    }
+    audio.enemyShoot.play()
     invaderProjectiles.push(
       new InvaderProjectile({
         position: {
@@ -265,7 +269,7 @@ class Grid {
 
 let player = new Player()
 let projectiles = []
-let invaders = new Invader({ position: { x: 0, y: 0 } }) // Removed unused variable
+let invaders = new Invader({ position: { x: 0, y: 0 } })
 let grids = []
 let invaderProjectiles = []
 let particles = []
@@ -303,7 +307,7 @@ let key = {
 function init() {
   player = new Player()
   projectiles = []
-  invaders = []
+  invaders = new Invader({ position: { x: 0, y: 0 } })
   grids = []
   invaderProjectiles = []
   particles = []
@@ -393,8 +397,8 @@ for (let i = 0; i < 100; i++) {
     })
   )
 }
+
 function rectangularCollision({ rectangle1, rectangle2 }) {
-  if (!rectangle1 || !rectangle2) return false // Prevents errors
   return (
     rectangle1.position.y + rectangle1.height >= rectangle2.position.y &&
     rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
@@ -409,32 +413,30 @@ function checkPlayerInvaderCollision() {
     grid.invaders.forEach((invader) => {
       if (game.isOver) return
 
-      if (invader.position && invader.width && invader.height) {
-        if (
-          rectangularCollision({
-            rectangle1: player,
-            rectangle2: invader
-          })
-        ) {
-          setTimeout(() => {
-            player.opacity = 0
-            game.isOver = true
-            endGame()
+      if (
+        rectangularCollision({
+          rectangle1: player,
+          rectangle2: invader
+        })
+      ) {
+        setTimeout(() => {
+          player.opacity = 0
+          game.isOver = true
+          endGame()
 
-            // create explosion
-            createExplosion({
-              position: {
-                x: player.position.x + player.width / 2,
-                y: player.position.y + player.height / 2
-              },
-              color: 'white',
-              particleCount: 15
-            })
-          }, 0)
-          setTimeout(() => {
-            game.active = false
-          }, 2000)
-        }
+          // create explosion
+          createExplosion({
+            position: {
+              x: player.position.x + player.width / 2,
+              y: player.position.y + player.height / 2
+            },
+            color: 'white',
+            particleCount: 15
+          })
+        }, 0)
+        setTimeout(() => {
+          game.active = false
+        }, 2000)
       }
     })
   })
@@ -550,6 +552,7 @@ function animation() {
       }, 2000)
     }
   })
+
   grids.forEach((grid, gridIndex) => {
     grid.update()
 
@@ -681,10 +684,7 @@ document.addEventListener(
   () => {
     const context = Howler.ctx
     if (context.state === 'suspended') {
-      context.resume().then(() => {
-        Howler.volume(1)
-        audio.backgroundMusic.play()
-      })
+      context.resume()
     }
   },
   { once: true }
@@ -759,7 +759,6 @@ addEventListener('keydown', ({ key: keyPressed }) => {
           }
         )
       )
-
       break
   }
 })
