@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goodreads Navigation</title>
+    <link rel="icon" href="./assets/image/favicon.png" />
+    <link rel="stylesheet" href="./css/mainHomeStyles.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .header-info a {
+        background-color: #ffd9d0;
+        display: flex;
+        max-width: 100%;
+        justify-content: center;
+      }
+
+      .nav-container {
+        background-color: #f4f1ea;
+        padding: 0 32px;
+        border-bottom: 1px solid #d8d8d8;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        max-width: 140px;
+      }
+      .logo img {
+        width: 100%;
+        margin-right: 15px;
+      }
+
+      .nav-links {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: #382110;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 16px;
+        text-decoration: none;
+        height: 50px;
+        padding: 0 12px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .nav-link:hover {
+        background-color: #382110;
+        color: white;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle::after {
+        content: "▼";
+        font-size: 0.6rem;
+        margin-left: 0.3rem;
+      }
+
+      .search-container {
+        position: relative;
+        flex-grow: 1;
+        flex-basis: 1fr;
+        max-width: 400px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #dcd6cc;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        outline: none;
+      }
+      .search-icon {
+        display: none;
+      }
+
+      .auth-links {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .auth-link {
+        color: #382110;
+        font-size: 16px;
+      }
+
+      @media (max-width: 1190px) {
+        .nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .header-info a {
+          overflow: hidden;
+        }
+
+        .nav-links {
+          order: 3;
+          width: 100%;
+          margin-top: 0.5rem;
+          display: flex;
+          justify-content: center;
+          gap: 5vw;
+          border-top: 1px solid #d8d8d8;
+        }
+
+        .search-container {
+          margin: 0 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .search-container,
+        .auth-links .join,
+        .my-books-link {
+          display: none;
+        }
+        .nav-links {
+          gap: 10vw;
+        }
+        .nav {
+          padding-top: 10px;
+        }
+
+        .auth-links .sign-in {
+          height: 32px;
+          padding: 0 15px;
+          border-radius: 5px;
+          background-color: #382110;
+          color: white;
+        }
+        .nav {
+          justify-content: space-between;
+        }
+        .search-icon {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-info">
+        <a href="#"
+          ><img src="./assets/image/siteHeaderFullImage.png" alt=""
+        /></a>
+      </div>
+      <div class="nav-container">
+        <nav class="nav">
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <a href="/" class="logo"
+            ><img src="./assets/image/logo.png" alt=""
+          /></a>
+          <div class="nav-links">
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/my-books" class="nav-link my-books-link">My Books</a>
+            <div class="dropdown">
+              <a href="/browse" class="nav-link dropdown-toggle">Browse</a>
+            </div>
+            <div class="dropdown">
+              <a href="/community" class="nav-link dropdown-toggle"
+                >Community</a
+              >
+            </div>
+          </div>
+          <div class="search-container">
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search books"
+            />
+          </div>
+          <div class="auth-links">
+            <a href="/sign-in" class="nav-link auth-link sign-in">Sign In</a>
+            <a href="/join" class="nav-link auth-link join">Join</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>

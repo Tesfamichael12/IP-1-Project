@@ -1,0 +1,210 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>COMPANY</h3>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Interest Based Ads</a></li>
+        <li><a href="#">Ad Preferences</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>WORK WITH US</h3>
+      <ul>
+        <li><a href="#">Authors</a></li>
+        <li><a href="#">Advertise</a></li>
+        <li><a href="#">Authors & ads blog</a></li>
+        <li><a href="#">API</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>CONNECT</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"
+          ><img
+            src="../assets/icons/facebook.svg"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="#" aria-label="Twitter"
+          ><img
+            src="../assets/icons/twitter.svg"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+        <a href="#" aria-label="Instagram"
+          ><img
+            src="../assets/icons/instagram.svg"
+            alt="Instagram"
+            class="social-icon"
+        /></a>
+        <a href="#" aria-label="LinkedIn"
+          ><img
+            src="../assets/icons/linkedin.svg"
+            alt="LinkedIn"
+            class="social-icon"
+        /></a>
+      </div>
+    </div>
+
+    <div class="footer-section app-downloads">
+      <a href="#" class="app-button">
+        <img
+          src="../assets/icons/appleStore.svg"
+          alt="Download on the App Store"
+        />
+      </a>
+      <a href="#" class="app-button">
+        <img
+          src="../assets/icons/googlePlayStore.png"
+          alt="Get it on Google Play"
+        />
+      </a>
+      <a href="#" class="desktop-version">Desktop version</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Goodreads, Inc.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #f9f9f9;
+    padding: 2rem 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-section h3 {
+    color: #333;
+    font-size: 0.875rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: #382110;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+  }
+
+  .app-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .app-button img {
+    height: 40px;
+    width: auto;
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .desktop-version {
+    color: #382110;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+
+  .desktop-version:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 944px) {
+    .app-downloads {
+      flex-direction: row;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .app-downloads {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer {
+      padding: 1.5rem 1rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+
+    .app-downloads {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
