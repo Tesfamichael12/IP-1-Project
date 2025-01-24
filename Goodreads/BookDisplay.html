@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details</title>
+    <link rel="icon" href="./assets/image/favicon.png" />
+    <link rel="stylesheet" href="./css/BookDisplay.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- imported  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header section -->
+    <header class="header">
+      <div class="header-info">
+        <a href="#"
+          ><img src="../assets/image/siteHeaderFullImage.png" alt=""
+        /></a>
+      </div>
+      <div class="nav-container">
+        <nav class="nav">
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <a href="/" class="logo"
+            ><img src="../assets/image/logo.png" alt=""
+          /></a>
+          <div class="nav-links">
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/my-books" class="nav-link my-books-link">My Books</a>
+            <div class="dropdown">
+              <a href="/browse" class="nav-link dropdown-toggle">Browse</a>
+            </div>
+            <div class="dropdown">
+              <a href="/community" class="nav-link dropdown-toggle"
+                >Community</a
+              >
+            </div>
+          </div>
+          <div class="search-container">
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search books"
+            />
+          </div>
+          <div class="auth-links">
+            <a href="signInWithPage.html" class="nav-link auth-link sign-in"
+              >Sign In</a
+            >
+            <a href="signUpWithPage.html" class="nav-link auth-link join"
+              >Join</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- header section end-->
+
+    <div class="container">
+      <div class="book-details">
+        <!-- Left Column - Book Cover -->
+        <div class="book-cover-section">
+          <img
+            src="../assets/image/books-image/book1.png"
+            alt="The Nightingale Book Cover"
+            class="book-cover main-book-cover"
+          />
+          <button class="btn btn-primary">Want to read</button>
+          <button class="btn btn-outline">
+            <span>Kindle</span>
+            <span>$11.99</span>
+          </button>
+          <div class="stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star empty">★</span>
+          </div>
+          <p class="rate-text">Rate this book</p>
+        </div>
+
+        <!-- Right Column - Book Info -->
+        <div class="book-info">
+          <div class="book-header">
+            <div>
+              <h1 class="book-title">The Nightingale</h1>
+              <p class="author">
+                Kristin Hannah <span class="verified">✓</span>
+              </p>
+            </div>
+            <button class="share-button" aria-label="Share">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="rating-info">
+            <div class="stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star empty">★</span>
+            </div>
+            <span class="rating-number">4.64</span>
+            <span class="rating-meta"
+              >· 1,666,080 ratings · 137,041 reviews</span
+            >
+          </div>
+
+          <div class="awards">
+            <span class="award">Goodreads Choice Award</span>
+            <span class="award-text"
+              >Winner for Readers' Favorite Historical Fiction (2015)</span
+            >
+          </div>
+
+          <div class="book-quotes">
+            <p>"In love we find out who we want to be."</p>
+            <p>"In war we find out who we are."</p>
+          </div>
+
+          <p class="book-setting">FRANCE, 1939</p>
+
+          <div class="genres">
+            <h3>Genres</h3>
+            <div class="genre-tags">
+              <a href="#" class="genre-link">Historical Fiction</a>
+              <a href="#" class="genre-link">Fiction</a>
+              <a href="#" class="genre-link">Historical</a>
+              <a href="#" class="genre-link">Audiobook</a>
+              <a href="#" class="genre-link">World War II</a>
+              <a href="#" class="genre-link">War</a>
+              <a href="#" class="genre-link">Romance</a>
+              <a href="#" class="genre-link">...more</a>
+            </div>
+          </div>
+
+          <div class="book-meta">
+            <p>564 pages, Hardcover</p>
+            <p>First published January 29, 2015</p>
+          </div>
+
+          <div class="details-dropdown">
+            <h2>Book details & editions</h2>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="reading-stats">
+            <div class="stat-group">
+              <div class="avatar-group">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt=""
+                  class="avatar"
+                />
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt=""
+                  class="avatar"
+                />
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt=""
+                  class="avatar"
+                />
+              </div>
+              <span class="stat-text">9,148 people are currently reading</span>
+            </div>
+            <div class="stat-group">
+              <div class="avatar-group">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt=""
+                  class="avatar"
+                />
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt=""
+                  class="avatar"
+                />
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt=""
+                  class="avatar"
+                />
+              </div>
+              <span class="stat-text">116k people want to read</span>
+            </div>
+          </div>
+
+          <section class="about-author">
+            <h2>About the author</h2>
+            <div class="author-header">
+              <img
+                src="/placeholder.svg?height=48&width=48"
+                alt="Kristin Hannah"
+                class="author-avatar"
+              />
+              <div class="author-info">
+                <div class="author-name">
+                  Kristin Hannah
+                  <span class="verified-badge">✓</span>
+                </div>
+                <div class="author-meta">129 books · 258k followers</div>
+              </div>
+              <button class="follow-button">Follow</button>
+            </div>
+            <p class="author-bio">
+              Kristin Hannah is the award-winning and bestselling author of more
+              than 20 novels including the international blockbuster, The
+              Nightingale, which was named Goodreads Best Historical fiction
+              novel for 2015 and won the coveted People's Choice award for best
+              fiction in the same year.
+            </p>
+            <button class="show-more">
+              Show more
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </section>
+
+          <section class="readers-section">
+            <div class="section-header">
+              <h2 class="section-title">Readers <em>also</em> enjoyed</h2>
+              <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+
+            <div class="book-carousel">
+              <div class="book-card">
+                <img
+                  src="../assets/image/books-image/book2.png"
+                  alt="All the Light We Cannot See"
+                  class="book-cover"
+                />
+                <h3 class="book-title">All the Light We Cannot See</h3>
+                <p class="book-author">Anthony Doerr</p>
+                <div class="book-rating">
+                  <span class="star">★</span>
+                  4.31 · 2m
+                </div>
+              </div>
+              <div class="book-card">
+                <img
+                  src="../assets/image/books-image/book3.png"
+                  alt="Just for the Summer"
+                  class="book-cover"
+                />
+                <h3 class="book-title">Just for the Summer</h3>
+                <p class="book-author">Abby Jimenez</p>
+                <div class="book-rating">
+                  <span class="star">★</span>
+                  4.38 · 629k
+                </div>
+              </div>
+              <div class="book-card">
+                <img
+                  src="../assets/image/books-image/book4.png"
+                  alt="The Boyfriend"
+                  class="book-cover"
+                />
+                <h3 class="book-title">The Boyfriend</h3>
+                <p class="book-author">Freida McFadden</p>
+                <div class="book-rating">
+                  <span class="star">★</span>
+                  4.04 · 457k
+                </div>
+              </div>
+              <div class="book-card">
+                <img
+                  src="../assets/image/books-image/book5.png"
+                  alt="Funny Story"
+                  class="book-cover"
+                />
+                <h3 class="book-title">Funny Story</h3>
+                <p class="book-author">Emily Henry</p>
+                <div class="book-rating">
+                  <span class="star">★</span>
+                  4.23 · 831k
+                </div>
+              </div>
+            </div>
+
+            <a href="#" class="see-similar">All similar books →</a>
+            <div class="media-section">
+              <!-- Video Section -->
+              <div class="book-video-container">
+                <h2 class="media-title">Book Trailer</h2>
+                <div class="book-video-wrapper">
+                  <video
+                    class="book-video"
+                    poster="/placeholder.svg?height=480&width=854"
+                  >
+                    <source
+                      src="../assets/video/How audiobooks are recorded.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="book-video-overlay">
+                    <button class="book-video-play-btn" aria-label="Play video">
+                      <svg viewBox="0 0 24 24" class="book-video-play-icon">
+                        <path d="M8 5v14l11-7z" fill="currentColor" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="book-video-controls">
+                    <button class="book-video-btn" id="playPauseBtn">
+                      <svg viewBox="0 0 24 24" class="book-video-control-icon">
+                        <path d="M8 5v14l11-7z" fill="currentColor" />
+                      </svg>
+                    </button>
+                    <div class="book-video-progress">
+                      <div class="book-video-progress-bar"></div>
+                    </div>
+                    <div class="book-video-time">0:00 / 2:10</div>
+                    <button class="book-video-btn" id="muteBtn">
+                      <svg viewBox="0 0 24 24" class="book-video-control-icon">
+                        <path
+                          d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Audio Section -->
+              <div class="book-audio-container">
+                <h2 class="media-title">Audio Sample</h2>
+                <div class="book-audio-player">
+                  <div class="book-audio-info">
+                    <img
+                      src="../assets/image/books-image/book1.png"
+                      alt="Audio thumbnail"
+                      class="book-audio-thumb"
+                    />
+                    <div class="book-audio-details">
+                      <h3 class="book-audio-title">Chapter 1: The Beginning</h3>
+                      <p class="book-audio-narrator">Narrated by Jane Smith</p>
+                    </div>
+                  </div>
+                  <div class="book-audio-controls">
+                    <button class="book-audio-btn book-audio-play">
+                      <svg viewBox="0 0 24 24" class="book-audio-icon">
+                        <path d="M8 5v14l11-7z" fill="currentColor" />
+                      </svg>
+                    </button>
+                    <div class="book-audio-timeline">
+                      <div class="book-audio-waveform">
+                        <div class="book-audio-wave"></div>
+                        <div class="book-audio-wave"></div>
+                        <div class="book-audio-wave"></div>
+                        <div class="book-audio-wave"></div>
+                        <div class="book-audio-wave"></div>
+                      </div>
+                      <div class="book-audio-progress"></div>
+                    </div>
+                    <div class="book-audio-time">
+                      <span class="book-audio-current">0:00</span>
+                      <span class="book-audio-duration">5:30</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <audio controls>
+                <source
+                  src="../assets/audio/How audiobooks are recorded.mp3"
+                  type="audio/mpeg"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </section>
+
+          <div class="nightingale-book-section">
+            <div class="nightingale-reviews-section">
+              <h2 class="nightingale-section-title">Ratings & Reviews</h2>
+
+              <div class="nightingale-review-prompt">
+                <div class="nightingale-reader-icon">
+                  <svg viewBox="0 0 24 24" class="nightingale-icon">
+                    <circle cx="12" cy="8" r="5" fill="currentColor" />
+                    <path
+                      d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+
+                <div class="nightingale-prompt-content">
+                  <h3 class="nightingale-prompt-title">
+                    What do <em>you</em> think?
+                  </h3>
+
+                  <div class="nightingale-rating-container">
+                    <div class="nightingale-stars">
+                      <span class="nightingale-star">☆</span>
+                      <span class="nightingale-star">☆</span>
+                      <span class="nightingale-star">☆</span>
+                      <span class="nightingale-star">☆</span>
+                      <span class="nightingale-star">☆</span>
+                    </div>
+                    <span class="nightingale-rate-label">Rate this book</span>
+                  </div>
+
+                  <button class="nightingale-btn nightingale-btn-review">
+                    Write a Review
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="nightingale-friends-section">
+              <h2 class="nightingale-section-title">Friends & Following</h2>
+              <div class="nightingale-create-account">
+                <a href="#" class="nightingale-link">Create a free account</a>
+                <span class="nightingale-prompt-text"
+                  >to discover what your friends think of this book!</span
+                >
+              </div>
+            </div>
+
+            <div class="nightingale-community-section">
+              <h2 class="nightingale-section-title">Community Reviews</h2>
+            </div>
+          </div>
+
+          <section class="ratings-reviews">
+            <h2 class="section-title">Ratings & Reviews</h2>
+            <div class="rating-summary">
+              <div class="rating-average">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star half">★</span>
+                </div>
+                <span class="rating-number">4.64</span>
+                <span class="rating-count">1,666,080 ratings</span>
+              </div>
+              <button class="btn btn-primary btn-1">Write a Review</button>
+            </div>
+            <div class="rating-bars">
+              <div class="rating-bar">
+                <span>5 stars</span>
+                <div class="bar">
+                  <div class="bar-fill" style="width: 72%"></div>
+                </div>
+                <span>1,209,449 (72%)</span>
+              </div>
+              <div class="rating-bar">
+                <span>4 stars</span>
+                <div class="bar">
+                  <div class="bar-fill" style="width: 20%"></div>
+                </div>
+                <span>346,866 (20%)</span>
+              </div>
+              <div class="rating-bar">
+                <span>3 stars</span>
+                <div class="bar">
+                  <div class="bar-fill" style="width: 4%"></div>
+                </div>
+                <span>81,534 (4%)</span>
+              </div>
+              <div class="rating-bar">
+                <span>2 stars</span>
+                <div class="bar">
+                  <div class="bar-fill" style="width: 1%"></div>
+                </div>
+                <span>18,611 (1%)</span>
+              </div>
+              <div class="rating-bar">
+                <span>1 star</span>
+                <div class="bar">
+                  <div class="bar-fill" style="width: 0.5%"></div>
+                </div>
+                <span>9,620 (<1%)</span>
+              </div>
+            </div>
+          </section>
+
+          <!--  -->
+          <div class="book-review-container">
+            <!-- First Review -->
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7BDDE8FD59-5530-4E74-B455-36FA69CBCA54%7D-FaDp9Um77j0pMtTgG9W2DvdxJKVnQy.png"
+                    alt="User avatar"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">(ಠ_ಠ)</div>
+                    <div class="book-review-stats">
+                      <span>61 reviews</span>
+                      <span>841 followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                  </div>
+                  <span class="book-review-date">May 29, 2016</span>
+                </div>
+
+                <p class="book-review-text">
+                  I really tried, you guys. There was even a 20% period when my
+                  standards were reduced so low from the previous 70%, that I
+                  thought maybe, maybe 2*. But the last 10% was offensive. Yes,
+                  I said offensive.
+                </p>
+
+                <button class="book-review-show-more">Show more</button>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>3,907 likes</span>
+                    <span>1,050 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Second Review -->
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7BDDE8FD59-5530-4E74-B455-36FA69CBCA54%7D-FaDp9Um77j0pMtTgG9W2DvdxJKVnQy.png"
+                    alt="Emily May"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">Emily May</div>
+                    <div class="book-review-stats">
+                      <span>2,122 reviews</span>
+                      <span>316k followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star">★</span>
+                  </div>
+                  <span class="book-review-date">April 20, 2016</span>
+                </div>
+
+                <blockquote class="book-review-quote">
+                  "Oh, for heaven's sake, Isabelle. Paris is overrun. The Nazis
+                  control the city. What is an eighteen-year-old girl to do
+                  about all of that?"
+                </blockquote>
+                <p class="book-review-text">What, indeed.</p>
+
+                <button class="book-review-show-more">Show more</button>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>20,907 likes</span>
+                    <span>10,050 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--  -->
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B2282BB5D-F03D-43F4-B2D6-D73E9A7CDBDD%7D-Xk00cGrfs2cGuppQe5ZfjdZNaPUxq6.png"
+                    alt="Violet wells"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">Violet wells</div>
+                    <div class="book-review-stats">
+                      <span>433 reviews</span>
+                      <span>4,050 followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                  </div>
+                  <span class="book-review-date">March 7, 2016</span>
+                </div>
+
+                <p class="book-review-text">
+                  It was the comparisons to All the Light We Cannot See that
+                  attracted me to The Nightingale. Though both novels are set
+                  during WW2 the similarities for me stopped there. All the
+                  Light is a magical novel electric with beautiful resounding
+                  prose and refined artistry. The Nightingale is a novel motored
+                  essentially by cliche and exaggeration.
+                </p>
+
+                <div class="book-review-tags">
+                  <a href="#" class="book-review-tag">21st-century</a>
+                  <a href="#" class="book-review-tag">historical-fiction</a>
+                  <a href="#" class="book-review-tag">world-war-two</a>
+                </div>
+
+                <button class="book-review-show-more">Show more</button>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>2,250 likes</span>
+                    <span>399 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B773B05DE-1452-40D4-9877-83002C0E7F0B%7D-n921n8qhAfz1TwREKMsNnDYWdISnry.png"
+                    alt="Laura"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">Laura</div>
+                    <div class="book-review-stats">
+                      <span>455 reviews</span>
+                      <span>71 followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                  </div>
+                  <span class="book-review-date">January 23, 2015</span>
+                </div>
+
+                <p class="book-review-text">
+                  So many 4 & 5 star reviews here, but I'm afraid I just thought
+                  this WWII historical novel was okay. There are so many novels
+                  about this time period and I didn't think this one rose above
+                  the heap. The last one to do that for me was Kate Atkinson's
+                  Life After Life and this just can't even compare to that or to
+                  David Gillham's City of Women.
+                </p>
+
+                <button class="book-review-show-more">Show more</button>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>668 likes</span>
+                    <span>86 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="/placeholder.svg?height=48&width=48"
+                    alt="Sarah Reader"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">Sarah Reader</div>
+                    <div class="book-review-stats">
+                      <span>892 reviews</span>
+                      <span>1.2k followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                  </div>
+                  <span class="book-review-date">March 15, 2024</span>
+                </div>
+
+                <p class="book-review-text">
+                  This book completely wrecked me. I stayed up until 3 AM
+                  finishing it because I simply couldn't put it down. The way
+                  Hannah weaves together the stories of these two sisters is
+                  masterful. I'll be thinking about this one for a long time.
+                </p>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>342 likes</span>
+                    <span>28 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="/placeholder.svg?height=48&width=48"
+                    alt="BookishAlex"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">BookishAlex</div>
+                    <div class="book-review-stats">
+                      <span>1,567 reviews</span>
+                      <span>3.4k followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star">★</span>
+                    <span class="book-review-star">★</span>
+                  </div>
+                  <span class="book-review-date">January 5, 2024</span>
+                </div>
+
+                <p class="book-review-text">
+                  While the historical aspects were well-researched, I found the
+                  pacing a bit uneven. The first third dragged considerably,
+                  though it did pick up in the latter half. The character
+                  development was solid, but some plot points felt contrived.
+                </p>
+
+                <button class="book-review-show-more">Show more</button>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>789 likes</span>
+                    <span>156 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="/placeholder.svg?height=48&width=48"
+                    alt="HistoryBuff"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">HistoryBuff</div>
+                    <div class="book-review-stats">
+                      <span>2,345 reviews</span>
+                      <span>5.6k followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star">★</span>
+                  </div>
+                  <span class="book-review-date">December 12, 2023</span>
+                </div>
+
+                <p class="book-review-text">
+                  As someone who has studied WWII extensively, I appreciate the
+                  attention to historical detail. The author clearly did her
+                  research. However, there were a few minor historical
+                  inaccuracies that bothered me...
+                </p>
+
+                <div class="book-review-tags">
+                  <a href="#" class="book-review-tag">historical-accuracy</a>
+                  <a href="#" class="book-review-tag">wwii</a>
+                </div>
+
+                <button class="book-review-show-more">Show more</button>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>1,234 likes</span>
+                    <span>89 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="/placeholder.svg?height=48&width=48"
+                    alt="ReadingRainbow"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">ReadingRainbow</div>
+                    <div class="book-review-stats">
+                      <span>678 reviews</span>
+                      <span>892 followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                  </div>
+                  <span class="book-review-date">November 30, 2023</span>
+                </div>
+
+                <p class="book-review-text">
+                  DNF at 30%. I know everyone loves this book but I just
+                  couldn't connect with the characters. The writing style wasn't
+                  for me and the pacing felt off. Maybe I'll try again later.
+                </p>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>245 likes</span>
+                    <span>67 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-review-item">
+              <div class="book-review-header">
+                <div class="book-review-user">
+                  <img
+                    src="/placeholder.svg?height=48&width=48"
+                    alt="LitLover"
+                    class="book-review-avatar"
+                  />
+                  <div class="book-review-user-info">
+                    <div class="book-review-username">LitLover</div>
+                    <div class="book-review-stats">
+                      <span>3,456 reviews</span>
+                      <span>7.8k followers</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="book-review-follow-btn">Follow</button>
+              </div>
+
+              <div class="book-review-content">
+                <div class="book-review-rating">
+                  <div class="book-review-stars">
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                    <span class="book-review-star filled">★</span>
+                  </div>
+                  <span class="book-review-date">October 15, 2023</span>
+                </div>
+
+                <p class="book-review-text">
+                  A masterpiece of historical fiction. The way the author
+                  captures the atmosphere of occupied France is breathtaking.
+                  The relationship between the sisters is complex and
+                  beautifully portrayed.
+                </p>
+
+                <button class="book-review-show-more">Show more</button>
+
+                <div class="book-review-actions">
+                  <div class="book-review-metrics">
+                    <span>2,567 likes</span>
+                    <span>234 comments</span>
+                  </div>
+                  <div class="book-review-buttons">
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">👍</span>
+                      Like
+                    </button>
+                    <button class="book-review-action-btn">
+                      <span class="book-review-action-icon">💬</span>
+                      Comment
+                    </button>
+                    <button class="book-review-action-btn">⋯</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-pagination">
+            <div class="review-count">Displaying 1 - 30 of 137,020 reviews</div>
+            <div class="review-more-container">
+              <span class="review-divider"></span>
+              <a href="#" class="review-more-link">More reviews and ratings</a>
+              <span class="review-divider"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- last seciton -->
+    <section class="last-section">
+      <div class="book-discussion-section">
+        <h2 class="book-discussion-title">Join the discussion</h2>
+
+        <div class="book-discussion-stats">
+          <a href="#" class="book-stat-link">
+            <div class="book-stat-icon book-stat-icon-quote">
+              <svg viewBox="0 0 120 120" version="1.1">
+                <g fill="none">
+                  <g transform="translate(0.000000, -0.051270)">
+                    <rect
+                      x="0"
+                      y="0.0512695312"
+                      width="120"
+                      height="120"
+                    ></rect>
+                    <path
+                      d="M81.5140065,100.213958 C86.7969917,100.213958 91.1365867,98.7045339 94.5327914,95.6856852 C97.9289962,92.6668366 99.6270985,88.5159196 99.6270985,83.2329345 C99.6270985,78.8933395 98.4478608,75.2612872 96.0893853,72.3367776 C93.7309097,69.4122679 90.6648916,67.478318 86.8913307,66.5349278 L86.8913307,66.5349278 L76.4196994,66.5349278 C76.4196994,59.7425183 78.7781749,53.3746344 83.495126,47.4312761 C88.212077,41.4879178 96.6082499,37.1011533 108.683645,34.2709827 L108.683645,34.2709827 L108.683645,24.3653855 C100.193133,25.1200976 92.9290281,27.1483866 86.8913307,30.4502523 C80.8536334,33.7521181 75.8536653,37.7143569 71.8914264,42.336969 C67.9291875,46.959581 65.0518474,51.9595491 63.259406,57.3368733 C61.4669646,62.7141975 60.5707439,68.0443521 60.5707439,73.3273373 C60.5707439,76.534864 60.9952695,79.7423907 61.8443207,82.9499174 C62.6933719,86.1574441 63.9669487,89.0347843 65.665051,91.5819378 C67.3631534,94.1290914 69.5329509,96.2045498 72.1744435,97.8083132 C74.8159361,99.4120766 77.9291237,100.213958 81.5140065,100.213958 Z"
+                      fill="#C69259"
+                      fill-rule="nonzero"
+                    ></path>
+                    <path
+                      d="M31.9432626,95.8485727 C37.2262478,95.8485727 41.5658427,94.3391484 44.9620475,91.3202997 C48.3582522,88.3014511 50.0563546,84.1505342 50.0563546,78.867549 C50.0563546,74.527954 48.8771169,70.8959017 46.5186413,67.9713921 C44.1601658,65.0468824 41.0941476,63.1129325 37.3205868,62.1695423 L37.3205868,62.1695423 L26.8489555,62.1695423 C26.8489555,55.3771328 29.207431,49.0092489 33.9243821,43.0658906 C38.6413331,37.1225323 47.037506,32.7357678 59.1129006,29.9055972 L59.1129006,29.9055972 L59.1129006,20 C50.6223887,20.7547122 43.3582841,22.7830011 37.3205868,26.0848668 C31.2828895,29.3867326 26.2829214,33.3489714 22.3206825,37.9715835 C18.3584436,42.5941955 15.4811035,47.5941636 13.6886621,52.9714878 C11.8962207,58.348812 11,63.6789666 11,68.9619518 C11,72.1694785 11.4245256,75.3770052 12.2735768,78.5845319 C13.122628,81.7920586 14.3962047,84.6693988 16.0943071,87.2165523 C17.7924095,89.7637059 19.962207,91.8391644 22.6036996,93.4429277 C25.2451921,95.0466911 28.3583798,95.8485727 31.9432626,95.8485727 Z"
+                      fill="#A3743D"
+                      fill-rule="nonzero"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="book-stat-content">
+              <div class="book-stat-number">824</div>
+              <div class="book-stat-label">quotes</div>
+            </div>
+          </a>
+          <a href="#" class="book-stat-link">
+            <div class="book-stat-icon book-stat-icon-discussion">
+              <svg viewBox="0 0 120 120" version="1.1">
+                <g fill="none">
+                  <rect x="0" y="0" width="120" height="120"></rect>
+                  <path
+                    d="M41.1548735,45.3237567 C58.3101011,45.3237567 72.2793579,57.5273265 72.2793579,72.6022645 C72.2793579,79.0628199 69.7107867,85.0109784 65.398415,89.730033 L65.780193,90.6588797 C66.732127,92.8038145 68.5487356,95.6988661 72.2793579,97.1853582 L71.595348,97.3496597 L70.8735952,97.4936964 C70.7396092,97.5177328 70.6000103,97.5412164 70.4566492,97.5632953 L70.0171301,97.6244656 C67.245901,98.0367922 62.5187875,98.1387156 58.1027303,95.470175 C53.1729588,98.2406391 47.4184168,99.8806797 41.1548735,99.8806797 C23.8983169,99.8806797 9.92858887,87.6772025 9.92858887,72.6022645 C9.92858887,57.5273265 23.8983169,45.3237567 41.1548735,45.3237567 Z"
+                    id="Path-Copy"
+                    fill="#D2D7FF"
+                    fill-rule="nonzero"
+                    transform="translate(41.103973, 72.602218) scale(-1, 1) translate(-41.103973, -72.602218) "
+                  ></path>
+                  <path
+                    d="M73.0667569,20.1899309 C93.435437,20.1899309 110.021362,34.6794273 110.021362,52.5781458 C110.021362,60.248868 106.971656,67.3112131 101.851507,72.9142233 L102.304798,74.017058 C103.435045,76.5637739 105.591934,80.0011157 110.021362,81.7660519 L109.209226,81.9611297 L108.352277,82.1321468 C108.193194,82.1606856 108.027446,82.1885681 107.857231,82.2147827 L107.335383,82.2874112 C104.045057,82.7769733 98.4324786,82.8979886 93.1892222,79.7295871 C87.3360246,83.019004 80.5035635,84.9662508 73.0667569,84.9662508 C52.5777672,84.9662508 35.9912824,70.4768643 35.9912824,52.5781458 C35.9912824,34.6794273 52.5777672,20.1899309 73.0667569,20.1899309 Z"
+                    id="Path"
+                    fill="#8A8FB2"
+                    fill-rule="nonzero"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="book-stat-content">
+              <div class="book-stat-number">344</div>
+              <div class="book-stat-label">discussions</div>
+            </div>
+          </a>
+          <a href="#" class="book-stat-link">
+            <div class="book-stat-icon book-stat-icon-question">
+              <svg viewBox="0 0 120 120" version="1.1">
+                <g fill="none">
+                  <rect x="0" y="0" width="120" height="120"></rect>
+                  <path
+                    d="M60.0746418,20.0878906 C85.2316967,20.0878906 105.716727,37.9836529 105.716727,60.0900948 C105.716727,69.5640901 101.95008,78.2866878 95.62626,85.2068826 L96.1861134,86.5689775 C97.5820642,89.7143885 100.246006,93.9597984 105.716727,96.1396449 L104.71367,96.3805827 L103.655265,96.5918033 C103.458783,96.6270512 103.25407,96.6614884 103.04384,96.6938657 L102.399313,96.7835681 C98.3354813,97.3882189 91.4034687,97.5376832 84.9276004,93.6244374 C77.6984028,97.6871474 69.2597314,100.092163 60.0746418,100.092163 C34.7689944,100.092163 14.2832729,82.1965367 14.2832729,60.0900948 C14.2832729,37.9836529 34.7689944,20.0878906 60.0746418,20.0878906 Z"
+                    fill="#A16F83"
+                    fill-rule="nonzero"
+                    transform="translate(60.000000, 60.090027) scale(-1, 1) translate(-60.000000, -60.090027) "
+                  ></path>
+                  <path
+                    d="M60.640045,70.1908781 C60.6440439,70.1908781 60.6424368,69.0449676 60.6440439,68.9837774 C60.6694224,68.0174646 60.7859416,67.1605205 60.9936014,66.4129452 C61.2301732,65.5612868 61.6086881,64.7569427 62.129146,63.9999131 C62.6496039,63.2428834 63.3001762,62.5213395 64.0808631,61.8352813 C64.8615499,61.1492232 65.7723513,60.4040221 66.8132671,59.5996781 C68.2326977,58.5587623 69.5220139,57.5178465 70.6812156,56.4769307 C71.8404173,55.4360149 72.8340187,54.3477847 73.6620199,53.2122402 C74.4900211,52.0766957 75.1287649,50.8583511 75.5782513,49.5572063 C76.0277376,48.2560616 76.2524808,46.8011451 76.2524808,45.1924571 C76.2524808,40.8868508 74.7857358,37.6694747 71.8522458,35.5403287 C68.9187559,33.4111828 64.8733785,32.3466098 59.7161139,32.3466098 C57.5396536,32.3466098 55.4814791,32.6186673 53.5415906,33.1627824 C51.601702,33.7068975 49.8983853,34.4639272 48.4316403,35.4338714 C46.9648953,36.4038157 45.8175222,37.5275316 44.989521,38.8050192 C44.1615198,40.0825068 43.7475192,41.4782802 43.7475192,42.9923396 C43.7475192,43.9386267 43.924948,44.8139423 44.2798057,45.6182863 C44.6346633,46.4226303 45.2142642,47.0850313 46.0186082,47.6054892 L53.6835337,47.6054892 L53.6835337,43.985941 C53.6835337,41.9041094 54.1448486,40.1889641 55.0674785,38.840505 C55.9901084,37.4920459 57.5159964,36.8178163 59.6451423,36.8178163 C61.6796596,36.8178163 63.2765191,37.3619314 64.4357208,38.4501615 C65.5949224,39.5383917 66.1745233,41.1234226 66.1745233,43.2052542 C66.1745233,44.4354274 65.9616087,45.5000004 65.5357795,46.3989731 C65.1099503,47.2979459 64.5540066,48.1259471 63.8679485,48.8829768 C63.1818904,49.6400064 62.4248607,50.3497217 61.5968595,51.0121227 C60.7688583,51.6745237 59.9526856,52.384239 59.1483416,53.1412687 C57.2557674,54.8918998 55.9191369,56.5715594 55.1384501,58.1802474 C54.3577632,59.7889355 53.9674198,61.6341953 53.9674198,63.7160269 C53.9674198,65.3720294 54.3222774,66.8860887 55.0319928,68.258205 C55.1796424,68.5436609 55.327292,68.8158061 55.4749416,69.0746405 C55.7002996,69.4697002 55.9256576,69.8337512 56.1510157,70.1667934 C58.935427,69.8513247 58.9236977,69.8513247 60.640045,70.1908781 Z M58.935427,89.1238354 C60.8280012,89.1238354 62.4248607,88.473263 63.7260054,87.1721183 C65.0271502,85.8709735 65.6777226,84.2977712 65.6777226,82.4525114 C65.6777226,80.5126229 65.0271502,78.8921062 63.7260054,77.5909615 C62.4248607,76.2898167 60.8280012,75.6392443 58.935427,75.6392443 C57.0901672,75.6392443 55.5051363,76.2898167 54.1803344,77.5909615 C52.8555324,78.8921062 52.1931315,80.5126229 52.1931315,82.4525114 C52.1931315,84.2977712 52.8555324,85.8709735 54.1803344,87.1721183 C55.5051363,88.473263 57.0901672,89.1238354 58.935427,89.1238354 Z"
+                    fill="#EDD9DE"
+                    fill-rule="nonzero"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="book-stat-content">
+              <div class="book-stat-number">304</div>
+              <div class="book-stat-label">questions</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- last seciton end -->
+
+    <!-- footer section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- Company information links -->
+        <div class="footer-section">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Interest Based Ads</a></li>
+            <li><a href="#">Ad Preferences</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+
+        <!-- Work with us links -->
+        <div class="footer-section">
+          <h3>WORK WITH US</h3>
+          <ul>
+            <li><a href="#">Authors</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Authors & ads blog</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+
+        <!-- Social media links -->
+        <div class="footer-section">
+          <h3>CONNECT</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><img
+                src="../assets/icons/facebook.svg"
+                alt="Facebook"
+                class="social-icon"
+            /></a>
+            <a href="#" aria-label="Twitter"
+              ><img
+                src="../assets/icons/twitter.svg"
+                alt="Twitter"
+                class="social-icon"
+            /></a>
+            <a href="#" aria-label="Instagram"
+              ><img
+                src="../assets/icons/instagram.svg"
+                alt="Instagram"
+                class="social-icon"
+            /></a>
+            <a href="#" aria-label="LinkedIn"
+              ><img
+                src="../assets/icons/linkedin.svg"
+                alt="LinkedIn"
+                class="social-icon"
+            /></a>
+          </div>
+        </div>
+
+        <!-- App download links -->
+        <div class="footer-section app-downloads">
+          <a href="#" class="app-button">
+            <img
+              src="../assets/icons/appleStore.svg"
+              alt="Download on the App Store"
+            />
+          </a>
+          <a href="#" class="app-button">
+            <img
+              src="../assets/icons/googlePlayStore.png"
+              alt="Get it on Google Play"
+            />
+          </a>
+          <a href="#" class="desktop-version">Desktop version</a>
+        </div>
+      </div>
+
+      <!-- Footer bottom section -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Goodreads, Inc.</p>
+      </div>
+    </footer>
+    <!-- footer section end -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
