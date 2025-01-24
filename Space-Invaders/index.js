@@ -196,8 +196,6 @@ class Invader {
       this.position.y += velocity.y
     }
   }
-  //
-
   shoot(invaderProjectiles) {
     // Ensure audio object is defined or remove this line if not necessary
     if (typeof audio !== 'undefined' && audio.enemyShoot) {
@@ -395,7 +393,6 @@ for (let i = 0; i < 100; i++) {
     })
   )
 }
-
 function rectangularCollision({ rectangle1, rectangle2 }) {
   if (!rectangle1 || !rectangle2) return false // Prevents errors
   return (
@@ -553,7 +550,6 @@ function animation() {
       }, 2000)
     }
   })
-
   grids.forEach((grid, gridIndex) => {
     grid.update()
 
