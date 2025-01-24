@@ -196,3 +196,200 @@ class Invader {
       this.position.y += velocity.y
     }
   }
+shoot(invaderProjectiles) {
+    // Ensure audio object is defined or remove this line if not necessary
+    if (typeof audio !== 'undefined' && audio.enemyShoot) {
+      audio.enemyShoot.play()
+    }
+    invaderProjectiles.push(
+      new InvaderProjectile({
+        position: {
+          x: this.position.x + this.width / 2,
+          y: this.position.y + this.height
+        },
+        velocity: {
+          x: 0,
+          y: 5
+        }
+      })
+    )
+  }
+}
+
+class Grid {
+  constructor() {
+    this.position = {
+      x: 0,
+      y: 0
+    }
+
+    this.velocity = {
+      x: 3,
+      y: 0
+    }
+
+    this.invaders = []
+
+    const columns = Math.floor(Math.random() * 10 + 5)
+    const rows = Math.floor(Math.random() * 5 + 2)
+
+    this.width = columns * 30
+    this.height = rows * 30
+
+    for (let x = 0; x < columns; x++) {
+      for (let y = 0; y < rows; y++) {
+        this.invaders.push(
+          new Invader({
+            position: {
+              x: x * 30,
+              y: y * 30
+            }
+          })
+        )
+      }
+    }
+  }
+
+  update() {
+    this.position.x += this.velocity.x
+    this.position.y += this.velocity.y
+
+    this.velocity.y = 0 // every fram reset the y velocity to 0 and then add 30 the height of one invader
+
+    if (this.position.x + this.width >= canvas.width || this.position.x <= 0) {
+      this.velocity.x = -this.velocity.x * 1.025
+      this.velocity.y = 30
+    }
+  }
+}
+
+let player = new Player()
+let projectiles = []
+let invaders = new Invader({ position: { x: 0, y: 0 } }) // Removed unused variable
+let grids = []
+let invaderProjectiles = []
+let particles = []
+
+let key = {
+  a: {
+    pressed: false
+  },
+  d: {
+    pressed: false
+  },
+  w: {
+    pressed: false
+  },
+  s: {
+    pressed: false
+  },
+  space: {
+    pressed: false
+  },
+  ArrowLeft: {
+    pressed: false
+  },
+  ArrowRight: {
+    pressed: false
+  },
+  ArrowUp: {
+    pressed: false
+  },
+  ArrowDown: {
+    pressed: false
+  }
+}
+
+function init() {
+  player = new Player()
+  projectiles = []
+  invaders = []
+  grids = []
+  invaderProjectiles = []
+  particles = []
+
+  key = {
+    a: {
+      pressed: false
+    },
+    d: {
+      pressed: false
+    },
+    w: {
+      pressed: false
+    },
+    s: {
+      pressed: false
+    },
+    space: {
+      pressed: false
+    },
+    ArrowLeft: {
+      pressed: false
+    },
+    ArrowRight: {
+      pressed: false
+    },
+    ArrowUp: {
+      pressed: false
+    },
+    ArrowDown: {
+      pressed: false
+    }
+  }
+
+  frames = 0
+  randomInterval = Math.floor(Math.random() * 500) + 500
+
+  game = {
+    isOver: false,
+    active: true
+  }
+  score = 0
+  document.querySelector('#finalScore').innerHTML = score
+  document.querySelector('#scoreEl').innerHTML = score
+
+  // create stars
+  for (let i = 0; i < 100; i++) {
+    particles.push(
+      new Particle({
+        position: {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height
+        },
+        velocity: {
+          x: 0,
+          y: Math.random() * 0.1 + 0.2
+        },
+        radius: Math.random() * 1.5,
+        color: 'white'
+      })
+    )
+  }
+}
+
+let frames = 0
+let randomInterval = Math.floor(Math.random() * 500) + 500
+
+let game = {
+  isOver: false,
+  active: true
+}
+
+// create stars
+for (let i = 0; i < 100; i++) {
+  particles.push(
+    new Particle({
+      position: {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height
+      },
+      velocity: {
+        x: 0,
+        y: Math.random() * 0.1 + 0.2
+      },
+      radius: Math.random() * 1.5,
+      color: 'white'
+    })
+  )
+}
