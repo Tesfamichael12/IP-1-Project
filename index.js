@@ -550,3 +550,243 @@ function animation() {
       }, 2000)
     }
   })
+grids.forEach((grid, gridIndex) => {
+    grid.update()
+
+    // spawn projectiles
+    if (frames % 100 === 0 && grid.invaders.length > 0) {
+      grid.invaders[Math.floor(Math.random() * grid.invaders.length)].shoot(
+        invaderProjectiles
+      )
+    }
+
+    grid.invaders.forEach((invader) => {
+      invader.update({ velocity: grid.velocity })
+    })
+
+    // check for collision between projectiles and invaders
+    projectiles.forEach((projectile, index) => {
+      grid.invaders.forEach((invader, invaderIndex) => {
+        if (
+          // if our projectiles top position is less than the position of the invaders bottom position
+          // there is a collision so we want to remove the projectile and the invader
+          projectile.position.y - projectile.radius <=
+            invader.position.y + invader.height &&
+          projectile.position.x + projectile.radius >= invader.position.x &&
+          projectile.position.x - projectile.radius <=
+            invader.position.x + invader.width &&
+          projectile.position.y + projectile.radius >= invader.position.y
+        ) {
+          setTimeout(() => {
+            const invaderFound = grid.invaders.find(
+              (invader2) => invader2 === invader
+            )
+            const projectileFound = projectiles.find(
+              (projectile2) => projectile2 === projectile
+            )
+            // Remove the invader and the projectile
+            if (invaderFound && projectileFound) {
+              score += 100
+              scoreEl.innerHTML = score
+              // create explosion
+              createExplosion({
+                position: {
+                  x: invader.position.x + invader.width / 2,
+                  y: invader.position.y + invader.height / 2
+                },
+                color: '#BAA0DE',
+                particleCount: 15
+              })
+            }
+
+            if (
+              grid.invaders.includes(invader) &&
+              projectiles.includes(projectile)
+            ) {
+              grid.invaders.splice(invaderIndex, 1)
+              projectiles.splice(index, 1)
+            }
+
+            // update the width of the invaders grid to make sure we are not drawing the grid outside the canvas or bouncing before reaching the end of the window
+            if (grid.invaders.length > 0) {
+              const firstInvader = grid.invaders[0]
+              const lastInvader = grid.invaders[grid.invaders.length - 1]
+
+              grid.width =
+                lastInvader.position.x -
+                firstInvader.position.x +
+                lastInvader.width
+              grid.position.x = firstInvader.position.x
+            } else {
+              grids.splice(gridIndex, 1)
+            }
+          }, 0)
+        }
+      })
+    })
+  })
+
+  projectiles.forEach((projectile, index) => {
+    projectile.update()
+    if (
+      projectile.position.x + projectile.radius < 0 ||
+      projectile.position.x - projectile.radius > canvas.width ||
+      projectile.position.y + projectile.radius < 0 ||
+      projectile.position.y - projectile.radius > canvas.height
+    ) {
+      setTimeout(() => {
+        projectiles.splice(index, 1)
+      }, 0)
+    }
+  })
+
+  if ((key.ArrowLeft.pressed || key.a.pressed) && player.position.x > 0) {
+    player.velocity.x = -player.speed
+    player.rotate = -0.15
+  } else if (
+    (key.ArrowRight.pressed || key.d.pressed) &&
+    player.position.x + player.width < canvas.width
+  ) {
+    player.velocity.x = player.speed
+    player.rotate = 0.15
+  } else {
+    player.velocity.x = 0
+    player.rotate = 0
+  }
+
+  if ((key.ArrowUp.pressed || key.w.pressed) && player.position.y > 5) {
+    // we can set it to 0 but the tip of the spaceship will be cut off
+    player.velocity.y = -player.speed
+  } else if (
+    (key.ArrowDown.pressed || key.s.pressed) &&
+    player.position.y + player.height < canvas.height
+  ) {
+    player.velocity.y = player.speed
+  } else {
+    player.velocity.y = 0
+  }
+
+  // spawn enemies
+  if (frames % randomInterval === 0) {
+    grids.push(new Grid())
+    randomInterval = Math.floor(Math.random() * 500) + 500
+    frames = 0
+  }
+
+  frames++
+}
+
+document.addEventListener(
+  'click',
+  () => {
+    const context = Howler.ctx
+    if (context.state === 'suspended') {
+      context.resume().then(() => {
+        Howler.volume(1)
+        audio.backgroundMusic.play()
+      })
+    }
+  },
+  { once: true }
+)
+
+document.querySelector('#startButton').addEventListener('click', () => {
+  const context = Howler.ctx
+  if (context.state === 'suspended') {
+    context.resume().then(() => {
+      try {
+        audio.backgroundMusic.play()
+      } catch (error) {
+        console.error('Error playing background music:', error)
+      }
+      audio.start.play()
+    })
+  } else {
+    audio.backgroundMusic.play()
+    audio.start.play()
+  }
+
+  document.querySelector('#startScreen').style.display = 'none'
+  document.querySelector('#scoreContainer').style.display = 'block'
+  init()
+  animation()
+})
+
+document.querySelector('#restartButton').addEventListener('click', () => {
+  audio.select.play()
+  document.querySelector('#restartScreen').style.display = 'none'
+  init()
+  animation()
+})
+
+addEventListener('keydown', ({ key: keyPressed }) => {
+  if (game.isOver) return
+
+  switch (keyPressed) {
+    case 'a':
+    case 'ArrowLeft':
+      key.a.pressed = true
+      key.ArrowLeft.pressed = true
+      break
+    case 'd':
+    case 'ArrowRight':
+      key.d.pressed = true
+      key.ArrowRight.pressed = true
+      break
+    case 'w':
+    case 'ArrowUp':
+      key.w.pressed = true
+      key.ArrowUp.pressed = true
+      break
+    case 's':
+    case 'ArrowDown':
+      key.s.pressed = true
+      key.ArrowDown.pressed = true
+      break
+
+    case ' ':
+      audio.shoot.play()
+
+      projectiles.push(
+        new Projectiles(
+          {
+            x: player.position.x + player.width / 2,
+            y: player.position.y
+          },
+          {
+            x: 0,
+            y: -10
+          }
+        )
+      )
+
+      break
+  }
+})
+
+addEventListener('keyup', ({ key: keyPressed }) => {
+  if (game.isOver) return
+
+  switch (keyPressed) {
+    case 'a':
+    case 'ArrowLeft':
+      key.a.pressed = false
+      key.ArrowLeft.pressed = false
+      break
+    case 'd':
+    case 'ArrowRight':
+      key.d.pressed = false
+      key.ArrowRight.pressed = false
+      break
+    case 'w':
+    case 'ArrowUp':
+      key.w.pressed = false
+      key.ArrowUp.pressed = false
+      break
+    case 's':
+    case 'ArrowDown':
+      key.s.pressed = false
+      key.ArrowDown.pressed = false
+      break
+  }
+})
