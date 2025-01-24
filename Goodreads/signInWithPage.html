@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="icon" href="./assets/image/favicon.png" />
+    <link rel="stylesheet" href="./css/signUpWithPageStyles.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sign-up-with-container">
+      <div class="logo">
+        <img src="assets/image/logo.png" alt="Goodreads" />
+      </div>
+
+      <div class="buttons">
+        <button class="button amazon-btn">
+          <img src="./assets/image/amazon-icon.svg" alt="" /><span
+            class="text-content"
+          >
+            Continue with Amazon
+          </span>
+        </button>
+
+        <button class="button apple-btn">
+          <img width="" src="./assets/image/apple-logo.svg" alt="" /><span
+            class="text-content"
+          >
+            Continue with Apple
+          </span>
+        </button>
+
+        <button
+          class="button email-btn"
+          onclick="location.href='signInWithEmail.html'"
+          style="background-color: #382110; color: white"
+        >
+          Sign in with email
+        </button>
+      </div>
+
+      <div
+        style="
+          margin-top: -20px;
+          box-shadow: 0 6px 5px 1px rgb(211, 210, 210);
+          padding-bottom: 20px;
+        "
+        class="signin"
+      >
+        <div class="terms"><a href="#">Get help with signing in</a>.</div>
+        Not a member? <a href="signUpWithEmail.html">Sign Up</a>
+      </div>
+    </div>
+  </body>
+</html>

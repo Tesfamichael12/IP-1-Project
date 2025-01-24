@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  line-height: 24px;
+}
+
+.sign-up-with-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.sign-up-with-container .logo {
+  height: 40px;
+  width: 181px;
+  margin: 44px auto 48px;
+}
+
+.sign-up-with-container .button {
+  width: 100%;
+  padding: 12px;
+  margin: 16px 0;
+  border: 1px solid #d6d0c4;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.sign-up-with-container .amazon-btn {
+  background-color: #f5d47a;
+  color: #000000;
+  border-color: #d6aa59;
+  transition: all 0.15s ease-in-out;
+}
+
+.sign-up-with-container .amazon-btn:hover {
+  background-color: #f0b954;
+}
+.sign-up-with-container .amazon-btn:hover span.text-content {
+  opacity: 0.8;
+}
+
+.sign-up-with-container .apple-btn {
+  background-color: #ffffff;
+  padding-right: 25px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #000000;
+  border-color: #d6d0c4;
+  transition: all 0.15s ease-in-out;
+}
+
+.sign-up-with-container .apple-btn:hover span.text-content {
+  opacity: 0.8;
+}
+
+.sign-up-with-container .email-btn {
+  background-color: #f4f1ea;
+  color: #333333;
+  transition: all 0.15s ease-in-out;
+}
+
+.sign-up-with-container .email-btn:hover {
+  background-color: #ebe8e2;
+  opacity: 0.9;
+}
+
+.sign-up-with-container .terms {
+  margin-top: 30px;
+  font-size: 15px;
+  color: #000;
+}
+
+.sign-up-with-container .terms a {
+  color: #00635d;
+  text-decoration: none;
+}
+
+.sign-up-with-container .signin {
+  margin-top: 10px;
+  font-size: 15px;
+}
+.sign-up-with-container .signin a {
+  color: #00635d;
+  text-decoration: none;
+}
+
+.sign-up-with-container a:hover {
+  text-decoration: underline;
+}
+
+.sign-up-with-container .button img {
+  width: 30px;
+}
