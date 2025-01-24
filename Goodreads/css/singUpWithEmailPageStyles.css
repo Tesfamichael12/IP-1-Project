@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  line-height: 1.5;
+  background-color: #ffffff;
+}
+
+.sign-up-with-email-container {
+  width: 100%;
+  max-width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up-with-email-container h1 {
+  font-family: Copernicus, Georgia, Cambria, "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.sign-up-with-email-container label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.sign-up-with-email-container input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #a5a4a4;
+  border-radius: 24px;
+  font-size: 16px;
+  background-color: #fafafa;
+  box-shadow: 0 0 0 3px 5px rgb(222, 224, 237);
+  transition: all 0.15s;
+}
+.sign-up-with-email-container input:hover {
+  background-color: #ebebeb;
+}
+
+.sign-up-with-email-container input:focus {
+  outline: none;
+  border-color: #666;
+  background-color: unset;
+}
+
+.sign-up-with-email-container .password-hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  opacity: 0.7;
+  padding-left: 7px;
+}
+
+.sign-up-with-email-container .create-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1c1c1c;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.sign-up-with-email-container .create-button:hover {
+  background-color: #000;
+}
+
+.sign-up-with-email-container .terms {
+  font-size: 16px;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.sign-up-with-email-container .sign-in {
+  font-size: 14px;
+  margin: 1rem 0;
+}
+
+.sign-up-with-email-container a {
+  color: #00635d;
+  text-decoration: none;
+}
+
+.sign-up-with-email-container a:hover {
+  text-decoration: underline;
+}
+
+.sign-up-with-email-container.footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.sign-up-with-email-container .footer-links {
+  margin-bottom: 0.5rem;
+}
+
+.sign-up-with-email-container .footer-links a {
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+/* styles for sign in page*/
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.sign-in .form-group label {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #979aa1;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.sign-in input {
+  margin: 10px 0;
+}
+.sign-in a {
+  text-decoration: underline;
+}
+
+.btn-primary:hover {
+  background-color: #000;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #1c1c1c;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background-color: #f5f5f5;
+}
+
+.terms {
+  font-size: 14px;
+  margin: 15px 0;
+  color: #1c1c1c;
+}
+
+.terms a {
+  color: #1c1c1c;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+.checkbox-wrapper {
+  margin: 15px 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #1c1c1c;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  margin-right: 8px;
+}
+
+.checkbox-label a {
+  color: #1c1c1c;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: hsl(0, 0%, 0%);
+  font-size: 15px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #000000;
+}
+
+.divider span {
+  margin: 0 10px;
+}
+
+.sign-in .sign-in-heading {
+  margin: 0;
+}
